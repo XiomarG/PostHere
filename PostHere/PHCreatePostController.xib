@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PHCreatePostController" customModule="PostHere" customModuleProvider="target">
+            <connections>
+                <outlet property="mainScrollView" destination="xXI-SC-fT0" id="OQE-jY-S4V"/>
+                <outlet property="photoView" destination="cEc-xt-t5X" id="ZNY-O7-wUe"/>
+                <outlet property="photoViewHeightConstraint" destination="A8d-WR-0jQ" id="AEv-7k-whb"/>
+                <outlet property="pictureBtn" destination="xQ0-Cj-Vt5" id="ac0-Gh-7sA"/>
+                <outlet property="postTextView" destination="aCi-fE-Z5U" id="fZc-Dl-2RF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXI-SC-fT0">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQ0-Cj-Vt5">
+                            <rect key="frame" x="50" y="260" width="500" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.58062365910000002" blue="0.17052199749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Attach Picture"/>
+                            <connections>
+                                <action selector="addOrDelelePicture:" destination="-1" eventType="touchUpInside" id="5Qt-re-08T"/>
+                            </connections>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCi-fE-Z5U">
+                            <rect key="frame" x="50" y="50" width="500" height="200"/>
+                            <color key="backgroundColor" red="1" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="7gE-mf-N6Z"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cEc-xt-t5X">
+                            <rect key="frame" x="50" y="300" width="500" height="0.0"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="A8d-WR-0jQ"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="xQ0-Cj-Vt5" firstAttribute="top" secondItem="aCi-fE-Z5U" secondAttribute="bottom" constant="10" id="L3k-jr-81Q"/>
+                        <constraint firstItem="xQ0-Cj-Vt5" firstAttribute="width" secondItem="aCi-fE-Z5U" secondAttribute="width" id="O6F-1F-Bva"/>
+                        <constraint firstItem="cEc-xt-t5X" firstAttribute="centerX" secondItem="xQ0-Cj-Vt5" secondAttribute="centerX" id="P7n-jV-hdP"/>
+                        <constraint firstAttribute="bottom" secondItem="cEc-xt-t5X" secondAttribute="bottom" constant="642" id="ZZR-dp-l1I"/>
+                        <constraint firstItem="xQ0-Cj-Vt5" firstAttribute="centerX" secondItem="aCi-fE-Z5U" secondAttribute="centerX" id="d2h-Es-HPW"/>
+                        <constraint firstAttribute="trailing" secondItem="cEc-xt-t5X" secondAttribute="trailing" constant="50" id="hPC-Kn-Lkk"/>
+                        <constraint firstItem="aCi-fE-Z5U" firstAttribute="top" secondItem="xXI-SC-fT0" secondAttribute="top" constant="50" id="hxU-qb-Z9c"/>
+                        <constraint firstAttribute="height" constant="1000" id="iIc-bo-yoV"/>
+                        <constraint firstItem="aCi-fE-Z5U" firstAttribute="centerX" secondItem="xXI-SC-fT0" secondAttribute="centerX" id="mVA-hh-Dta"/>
+                        <constraint firstItem="cEc-xt-t5X" firstAttribute="width" secondItem="xQ0-Cj-Vt5" secondAttribute="width" id="rdx-Tm-Ahd"/>
+                        <constraint firstItem="cEc-xt-t5X" firstAttribute="top" secondItem="xQ0-Cj-Vt5" secondAttribute="bottom" constant="10" id="sq6-BA-YvJ"/>
+                        <constraint firstItem="aCi-fE-Z5U" firstAttribute="leading" secondItem="xXI-SC-fT0" secondAttribute="leading" constant="50" id="y9c-pv-uno"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xXI-SC-fT0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4AL-4d-42m"/>
+                <constraint firstAttribute="trailing" secondItem="xXI-SC-fT0" secondAttribute="trailing" id="6OY-G3-CY0"/>
+                <constraint firstItem="xXI-SC-fT0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CzN-mh-G3l"/>
+                <constraint firstItem="xXI-SC-fT0" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Ig7-qt-SmD"/>
+                <constraint firstItem="xXI-SC-fT0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tax-dU-e3Q"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

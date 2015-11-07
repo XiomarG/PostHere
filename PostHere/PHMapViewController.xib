@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PHMapViewController" customModule="PostHere" customModuleProvider="target">
+            <connections>
+                <outlet property="currentLocationButton" destination="zzI-Me-nDB" id="rZO-ij-2Qd"/>
+                <outlet property="mapTypeControl" destination="gtx-kT-5g9" id="sdA-tQ-Gne"/>
+                <outlet property="mapView" destination="Gef-Qy-HQq" id="HOd-GA-nZM"/>
+                <outlet property="showMapTypeButton" destination="12V-Fn-9Ws" id="eX2-Xo-xhB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gef-Qy-HQq">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzI-Me-nDB" userLabel="currentLocation">
+                    <rect key="frame" x="20" y="550" width="30" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="currentButtonTapped:" destination="-1" eventType="touchUpInside" id="OTc-cu-QbR"/>
+                    </connections>
+                </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-kT-5g9">
+                    <rect key="frame" x="368" y="552" width="212" height="29"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <segments>
+                        <segment title="Standard"/>
+                        <segment title="Satellite"/>
+                        <segment title="Hybrid"/>
+                    </segments>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="changeMapType:" destination="-1" eventType="valueChanged" id="kYA-qf-49Q"/>
+                    </connections>
+                </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12V-Fn-9Ws" userLabel="showMapType">
+                    <rect key="frame" x="558" y="555" width="22" height="22"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="11"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="showMapType:" destination="-1" eventType="touchUpInside" id="G8h-kU-IGp"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="12V-Fn-9Ws" firstAttribute="centerY" secondItem="gtx-kT-5g9" secondAttribute="centerY" id="A72-2q-BAh"/>
+                <constraint firstItem="Gef-Qy-HQq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="GL6-5Y-7Lr"/>
+                <constraint firstItem="zzI-Me-nDB" firstAttribute="bottom" secondItem="Gef-Qy-HQq" secondAttribute="bottom" constant="-20" id="HQf-Gy-EoH"/>
+                <constraint firstItem="Gef-Qy-HQq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MAt-Ix-99c"/>
+                <constraint firstItem="Gef-Qy-HQq" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="SX0-0b-geW"/>
+                <constraint firstItem="Gef-Qy-HQq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="hsD-rI-1Pc"/>
+                <constraint firstItem="Gef-Qy-HQq" firstAttribute="leading" secondItem="zzI-Me-nDB" secondAttribute="leading" constant="-20" id="iLw-vf-Mjd"/>
+                <constraint firstItem="12V-Fn-9Ws" firstAttribute="trailing" secondItem="gtx-kT-5g9" secondAttribute="trailing" id="nW6-PB-QWm"/>
+                <constraint firstItem="Gef-Qy-HQq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="oyS-IR-exP"/>
+                <constraint firstItem="Gef-Qy-HQq" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="uwW-w3-AT1"/>
+                <constraint firstItem="gtx-kT-5g9" firstAttribute="trailing" secondItem="Gef-Qy-HQq" secondAttribute="trailing" constant="-20" id="wCI-6O-JYr"/>
+                <constraint firstItem="gtx-kT-5g9" firstAttribute="bottom" secondItem="Gef-Qy-HQq" secondAttribute="bottom" constant="-20" id="xQd-SR-EeO"/>
+                <constraint firstAttribute="bottom" secondItem="Gef-Qy-HQq" secondAttribute="bottom" id="xWQ-zC-FbC"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="GL6-5Y-7Lr"/>
+                    <exclude reference="SX0-0b-geW"/>
+                    <exclude reference="hsD-rI-1Pc"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
